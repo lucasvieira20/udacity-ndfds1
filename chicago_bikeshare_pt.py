@@ -101,7 +101,15 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 
+"""
+Função que calcula os Generenos
+Argumentos:
+    data_list: Parametro que faz referencia a lista passada na função.
 
+Retorna:
+    Uma lista com os valores dos genero.
+
+"""
 
 def count_gender(data_list):
     male = 0
@@ -129,6 +137,18 @@ input("Aperte Enter para continuar...")
 # TAREFA 6
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
+
+
+"""
+Função que calcula o genero mais popular
+Argumentos:
+    data_list: Parametro que faz referencia a lista passada na função.
+
+Retorna:
+    O genero mais popular
+
+"""
+
 def most_popular_gender(data_list):
 
     list = count_gender(data_list)
