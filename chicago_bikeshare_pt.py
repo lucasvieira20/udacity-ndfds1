@@ -47,8 +47,8 @@ input("Aperte Enter para continuar...")
 
 print("\nTAREFA 2: Imprimindo o gênero das primeiras 20 amostras")
 
-for data in range(20):
-    print(data_list[data][-2])
+for i, line in enumerate(data_list[:20],start=1):
+    print("Line : {}\tGender: {}".format(i,line[-2]))
 
 # Ótimo! Nós podemos pegar as linhas(samples) iterando com um for, e as colunas(features) por índices.
 # Mas ainda é difícil pegar uma coluna em uma lista. Exemplo: Lista com todos os gêneros
@@ -57,7 +57,18 @@ input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 def column_to_list(data, index):
+    
+    """      
+    Função que adiciona a columa de uma lista em uma outra lista.
+    Argumentos:
+        data: Coluna a ser indexada.
+        index: chave atual
+    Retorna:
+        Uma lista de outra coluna.
+    """
+
     column_list = []
+
     # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
     for i in range(len(data)):
         column_list.append(data[i][index])
@@ -101,17 +112,19 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 
-"""
-Função que calcula os Generenos
-Argumentos:
-    data_list: Parametro que faz referencia a lista passada na função.
 
-Retorna:
-    Uma lista com os valores dos genero.
-
-"""
 
 def count_gender(data_list):
+    """
+    Função que calcula os Generenos
+    Argumentos:
+        data_list: Parametro que faz referencia a lista passada na função.
+
+    Retorna:
+        Uma lista com os valores dos genero.
+
+    """
+
     male = 0
     female = 0
 
@@ -139,17 +152,17 @@ input("Aperte Enter para continuar...")
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 
 
-"""
-Função que calcula o genero mais popular
-Argumentos:
-    data_list: Parametro que faz referencia a lista passada na função.
-
-Retorna:
-    O genero mais popular
-
-"""
 
 def most_popular_gender(data_list):
+    """
+    Função que calcula o genero mais popular
+    Argumentos:
+        data_list: Parametro que faz referencia a lista passada na função.
+
+    Retorna:
+        O genero mais popular
+
+    """
 
     list = count_gender(data_list)
     male,female = list
@@ -189,6 +202,16 @@ print("\nTAREFA 7: Verifique o gráfico!")
 
 
 def count_user_type(data_list):
+    """
+    Função que retorna a quatidade de tipos de usuarios
+    Argumentos:
+        data_list: Parametro que faz referencia a lista passada na função.
+
+    Retorna:
+        A quantidade de tipos de usuários Setados.
+    """
+
+
     subscriber = 0
     customer = 0
 
@@ -247,6 +270,15 @@ for trip in range(len(trip_duration_list)):
 
 # Criei uma funçao para calcular a media
 def mean_calc(def_list, length):
+    """
+    funçao para calcular a media
+    Argumentos:
+        def_list: Parametro que faz referencia a lista passada na função.
+        lenght: tamanho
+    Retorna:
+        O valor da Mediana.
+
+    """
     count = 0;
     for item in def_list:
         count += int(item)
@@ -260,16 +292,18 @@ mean_trip = mean_calc(trip_duration_list, len(trip_duration_list))
 
 
 # Criei uma função para calcular mediana
-"""
-Função que calcula a mediana
-Argumentos:
-    def_list: Parametro que faz referencia a lista passada na função.
 
-Retorna:
-    O valor da Mediana.
-
-"""
 def median_calc(def_list):
+
+    """
+    Função que calcula a mediana
+    Argumentos:
+        def_list: Parametro que faz referencia a lista passada na função.
+
+    Retorna:
+        O valor da Mediana.
+
+    """
 
     #Parse Cada Item da Lista para String
     for item in range(len(def_list)):
@@ -336,13 +370,6 @@ input("Aperte Enter para continuar...")
 print("Você vai encarar o desafio? (yes ou no)")
 answer = "yes"
 
-def count_items(column_list):
-    item_types = set(column_list)
-    count_items = []
-
-    for item in range(len(column_list)):
-        column_list[item] = 1
-    return item_types, column_list
 
 
 if answer == "yes":
